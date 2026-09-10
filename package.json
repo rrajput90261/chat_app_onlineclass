@@ -1,0 +1,22 @@
+{
+  "name": "chat_app_onlineclass",
+  "version": "1.0.0",
+  "description": "Full-stack real-time chat application with React, Socket.io, Express, MongoDB",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "server": "nodemon server/server.js",
+    "client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build"
+  },
+  "keywords": [
+    "chat",
+    "realtime",
+    "socket.io",
+    "express",
+    "react",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC"
+}
