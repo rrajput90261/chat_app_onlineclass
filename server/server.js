@@ -12,10 +12,10 @@ const server = http.createServer(app);
 const io = new Server(server, {
     pingTimeout: 60000,
      cors: {
-    origin: process.env.CLIENT_URL|| "*",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
-  }
+        origin: process.env.CLIENT_URL,
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true
+    }
 });
 
 // Attach socket event handlers
