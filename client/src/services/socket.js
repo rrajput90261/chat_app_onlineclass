@@ -4,7 +4,7 @@ let socket = null;
 
 export const initSocket = (user) => {
   if (!socket) {
-    socket = io(window.location.origin, {
+    socket = io(window.location.origin||import.meta.env.VITE_SOCKET_URL, {
       reconnection: true,
       reconnectionAttempts: 5,
       reconnectionDelay: 1000
