@@ -11,10 +11,11 @@ const server = http.createServer(app);
 // Initialize Socket.io
 const io = new Server(server, {
     pingTimeout: 60000,
-    cors: {
-        origin: "*",
-        methods: ["GET", "POST", "PUT", "DELETE"]
-    }
+     cors: {
+    origin: process.env.CLIENT_URL|| "*",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  }
 });
 
 // Attach socket event handlers
@@ -32,10 +33,9 @@ const startServer = async () => {
 
         // Start server
         server.listen(config.PORT, () => {
-            console.log(`===========================================`);
+           
             console.log(`🚀 Chat App Server running on port ${config.PORT}`);
             console.log(`🌐 Local URL: http://localhost:${config.PORT}`);
-            console.log(`===========================================`);
         });
 
     } catch (error) {

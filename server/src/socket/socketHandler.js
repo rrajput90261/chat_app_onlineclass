@@ -18,7 +18,7 @@ const socketHandler = (io) => {
             socket.join(userId);
             socket.emit("connected", { socketId: socket.id });
 
-            // Register in online tracking
+            // Register in onlinetracking
             if (!onlineUsers.has(userId)) {
                 onlineUsers.set(userId, new Set());
             }
